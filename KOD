@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#Witaj w konwerterze liczb na system: dziesiętny, binarny, ósemkowy, szesnastkowy. Program poprosi użytkownika o podanie liczby potem przekonwertuje ją na wybrany system. 
+#ZARYS PROGRAMU: 1.Napisanie liczby przez użytkownika 2.Wskazanie w punktach numerycznych w jakim systemie została napisana liczba. 3.Wskazanie w punktach numerycznych na jaki system program ma przekonwertować. 4.Rezultat programu.
+#Autorem programu jest Dominik Zdanowicz
+
+
+print ("Witaj w konwerterze liczb na system: dziesiętny, bianrny, ósemkowy, szesnastkowy")
+print ()
+
+def liczba():
+    liczba = input("Proszę wpisać liczbę: ")            #Progam prosi o podanie liczby przez użytkownika
+
+    if str(liczba).isdigit():
+        return True
+    else:
+        print ("Dozwolone są tylko liczby") 
+        while True:
+            liczba()
+
+liczba()
+
+print()
+print ("Wskaż system swojej liczby 1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")                       #Użytkownik wskazuje system swojej liczby
+print()
+
+def system_naszej_liczby():
+    system_użytkownika = input(" ")
+    if int(system_użytkownika) <= 4:
+        return True
+
+    else:
+        print ("Wskaż poprawny system")
+        while True:
+            system_naszej_liczby()
+        
+system_naszej_liczby()
+
+print ("Wybierz system na który chciałbyś przekonwertować swoją liczbę")
+print ("  1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
