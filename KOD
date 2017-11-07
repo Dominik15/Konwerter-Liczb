@@ -8,18 +8,16 @@
 print ("Witaj w konwerterze liczb na system: dziesiętny, bianrny, ósemkowy, szesnastkowy")
 print ()
 
-def liczba():
+def ok():
     Number = input("Proszę wpisać liczbę: ")            #Progam prosi o podanie liczby przez użytkownika
 
-    if str(liczba).isdigit():
+    if str(Number).isdigit():
         return True
     else:
         print ("Dozwolone są tylko liczby") 
 
 while True:
-    liczba()
-
-liczba()
+    ok()
 
 print()
 print ("Wskaż system swojej liczby 1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")                       #Użytkownik wskazuje system swojej liczby
