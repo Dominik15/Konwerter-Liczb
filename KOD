@@ -9,14 +9,15 @@ print ("Witaj w konwerterze liczb na system: dziesiętny, bianrny, ósemkowy, sz
 print ()
 
 def liczba():
-    liczba = input("Proszę wpisać liczbę: ")            #Progam prosi o podanie liczby przez użytkownika
+    Number = input("Proszę wpisać liczbę: ")            #Progam prosi o podanie liczby przez użytkownika
 
     if str(liczba).isdigit():
         return True
     else:
         print ("Dozwolone są tylko liczby") 
-        while True:
-            liczba()
+
+while True:
+    liczba()
 
 liczba()
 
