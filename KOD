@@ -17,7 +17,8 @@ def ok():
         print ("Dozwolone są tylko liczby") 
 
 while True:
-    ok()
+    if ok():
+        break
 
 print()
 print ("Wskaż system swojej liczby 1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")                       #Użytkownik wskazuje system swojej liczby
