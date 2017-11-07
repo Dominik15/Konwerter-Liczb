@@ -5,11 +5,12 @@
 #Autorem programu jest Dominik Zdanowicz
 
 
+print ()
 print ("Witaj w konwerterze liczb na system: dziesiętny, bianrny, ósemkowy, szesnastkowy")
 print ()
 
 def ok():
-    Number = input("Proszę wpisać liczbę: ")            #Progam prosi o podanie liczby przez użytkownika
+    Number = input("Proszę wpisać liczbę: ")                                           #Progam prosi o podanie liczby przez użytkownika
 
     if str(Number).isdigit():
         return True
@@ -17,23 +18,48 @@ def ok():
         print ("Dozwolone są tylko liczby") 
 
 while True:
-    ok()
+    if ok():
+        break
 
 print()
-print ("Wskaż system swojej liczby 1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")                       #Użytkownik wskazuje system swojej liczby
+print ("      Wskaż system swojej liczby")                                              #Użytkownik wskazuje system swojej liczby
+print ("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
 print()
 
-def system_naszej_liczby():
+def system():
     system_użytkownika = input(" ")
-    if int(system_użytkownika) <= 4:
+    if str(system_użytkownika).isdigit() and int(system_użytkownika) <= 4:
         return True
 
     else:
+        print ()
         print ("Wskaż poprawny system")
-        while True:
-            system_naszej_liczby()
         
-system_naszej_liczby()
+while True:
+    if system():
+        break
 
-print ("Wybierz system na który chciałbyś przekonwertować swoją liczbę")
-print ("  1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
+print ()
+print ("      Wybierz system na który chciałbyś przekonwertować swoją liczbę")                                              #Użytkownik wybiera system na który chciałby przekonwertować swoją liczbę
+print ("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
+
+def wybór():
+    wybór_systemu = input(" ")
+
+    if wybór_systemu == 1:
+        return True
+
+    elif wybór_systemu == 2:
+        return bin(wybór_systemu)
+
+    elif wybór_systemu == 3:
+        return oct(wybór_systemu)
+
+    elif wybór_systemu == 4:
+        return hex(wybór_systemu)
+
+    else:
+        print ("Wybierz poprawny system")
+
+while True:
+    wybór()
