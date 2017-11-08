@@ -9,8 +9,9 @@ print ()
 print ("Witaj w konwerterze liczb na system: dziesiętny, bianrny, ósemkowy, szesnastkowy")
 print ()
 
-def ok():
-    Number = input("Proszę wpisać liczbę: ")                                           #Progam prosi o podanie liczby przez użytkownika
+Number = input("Proszę wpisać liczbę: ")
+
+def ok():                                           #Progam prosi o podanie liczby przez użytkownika
 
     if str(Number).isdigit():
         return True
@@ -43,23 +44,26 @@ print ()
 print ("      Wybierz system na który chciałbyś przekonwertować swoją liczbę")                                              #Użytkownik wybiera system na który chciałby przekonwertować swoją liczbę
 print ("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
 
-def wybór():
-    wybór_systemu = input(" ")
+def wybor():
+    wybor_systemu = input(" ")
 
-    if wybór_systemu == 1:
+    if wybor_systemu == "1":
         return True
 
-    elif wybór_systemu == 2:
-        return bin(wybór_systemu)
+    elif wybor_systemu == "2":
+        print(bin(int(Number)))
 
-    elif wybór_systemu == 3:
-        return oct(wybór_systemu)
+    elif wybor_systemu == "3":
+        print(oct(int(Number)))
 
-    elif wybór_systemu == 4:
-        return hex(wybór_systemu)
+    elif wybor_systemu == "4":
+        print(hex(int(Number)))
 
     else:
-        print ("Wybierz poprawny system")
+        print("Wybierz poprawny system")
 
 while True:
-    wybór()
+    if wybor():
+        continue
+
+print ("      Twoja liczba: %s       Po konwersji: %s ") % (Number, wybor_systemu)
