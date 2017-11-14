@@ -1,30 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#Witaj w konwerterze liczb na system: dziesiętny, binarny, ósemkowy, szesnastkowy. Program poprosi użytkownika o podanie liczby potem przekonwertuje ją na wybrany system. 
+#Witaj w konwerterze liczb na system: dziesiętny, binarny, ósemkowy, szesnastkowy. Program poprosi użytkownika o podanie liczby potem przekonwertuje ją na wybrany system.
 #ZARYS PROGRAMU: 1.Napisanie liczby przez użytkownika 2.Wskazanie w punktach numerycznych w jakim systemie została napisana liczba. 3.Wskazanie w punktach numerycznych na jaki system program ma przekonwertować. 4.Rezultat programu.
 #Autorem programu jest Dominik Zdanowicz
 
 
 print ()
-print ("Witaj w konwerterze liczb na system: dziesiętny, bianrny, ósemkowy, szesnastkowy")
+print ("Witaj w konwerterze liczb na system: dziesiętny, binarny, ósemkowy, szesnastkowy")
 print ()
 
-Number = input("Proszę wpisać liczbę: ")
 
-def ok():                                           #Progam prosi o podanie liczby przez użytkownika
-
+def liczba():                                           #Progam prosi o podanie liczby przez użytkownika
+    global Number
+    Number = input("Proszę wpisać liczbę: ")
     if str(Number).isdigit():
         return True
     else:
-        print ("Dozwolone są tylko liczby") 
+        print ("Dozwolone są tylko liczby")
 
 while True:
-    if ok():
+    if liczba():
         break
 
 print()
-print ("      Wskaż system swojej liczby")                                              #Użytkownik wskazuje system swojej liczby
-print ("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
+print("      Wskaż system swojej liczby")                                              #Użytkownik wskazuje system swojej liczby
+print("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
 print()
 
 def system():
@@ -35,35 +35,46 @@ def system():
     else:
         print ()
         print ("Wskaż poprawny system")
-        
+
 while True:
     if system():
         break
 
-print ()
-print ("      Wybierz system na który chciałbyś przekonwertować swoją liczbę")                                              #Użytkownik wybiera system na który chciałby przekonwertować swoją liczbę
-print ("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
+print()
+print("      Wybierz system na który chciałbyś przekonwertować swoją liczbę")                  #Użytkownik wybiera system na który chciałby przekonwertować swoją liczbę
+print("      1. Dziesiętny 2. Binarny 3. Ósemkowy 4. Szesnastkowy")
+print()
 
-def wybor():
+def konwersja():
+    global wybor_systemu
     wybor_systemu = input(" ")
 
     if wybor_systemu == "1":
         return True
 
     elif wybor_systemu == "2":
-        print(bin(int(Number)))
+         wybor_systemu = (bin(int(Number)))
+         return True
 
     elif wybor_systemu == "3":
-        print(oct(int(Number)))
+         wybor_systemu = (oct(int(Number)))
+         return True
 
     elif wybor_systemu == "4":
-        print(hex(int(Number)))
+         wybor_systemu = (hex(int(Number)))
+         return True
 
     else:
         print("Wybierz poprawny system")
 
 while True:
-    if wybor():
-        continue
+    if konwersja():
+        break
 
-print ("      Twoja liczba: %s       Po konwersji: %s ") % (Number, wybor_systemu)
+print()
+print("       Twoja liczba: %s       Twoja liczba po konwersji: %s        " % (Number, wybor_systemu))
+
+
+#KONIEC PROGRAMU
+
+#Autorem programu jest DOMINIK ZDANOWICZ
